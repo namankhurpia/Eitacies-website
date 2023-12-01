@@ -14,6 +14,43 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var form = document.querySelector('.form-subscribe');
+    
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault(); // Prevent the default form submission
+    
+                    var emailAddress = document.getElementById('emailAddress').value;
+    
+                    // Make a POST request to the specified endpoint
+                    fetch('https://eitaciesinc.pythonanywhere.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ string: emailAddress }),
+                    })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Error sending message!');
+                        }
+                        // Reset the form or perform other actions if needed
+                        form.reset();
+                        document.getElementById('submitErrorMessage').classList.add('d-none');
+                        // Display a success message
+                        document.getElementById('successMessage').classList.remove('d-none');
+                    })
+                    .catch(error => {
+                        console.error('Error:', error.message);
+                        // Display an error message to the user if needed
+                        document.getElementById('submitErrorMessage').classList.remove('d-none');
+                    });
+                });
+            });
+        </script>
+
     </head>
     <body>
         <!-- Navigation-->
@@ -47,8 +84,11 @@
                             <!-- to get an API token!-->
 
                             <!--https://script.google.com/macros/s/AKfycbxwD3u52aX_42piY8fyKyPaWjNQ1ReoPQ2K2_0AsrLlOcR-JVgtqLhN4h3Goch7Of9M/exec-->
+
+                            <!-- no locks https://script.google.com/macros/s/AKfycbwLxERW-EXczn5X7hS2TxNhzU7xr-2psojdZ1BA9JhBhnFXFf12AXbFV0OsoIcdtlMr/exec-->
+                            <!--action = "https://script.google.com/a/namank.xyz/macros/s/AKfycbwLxERW-EXczn5X7hS2TxNhzU7xr-2psojdZ1BA9JhBhnFXFf12AXbFV0OsoIcdtlMr/exec"-->
                             
-                            <form method="post" action = "https://script.google.com/a/namank.xyz/macros/s/AKfycbxwD3u52aX_42piY8fyKyPaWjNQ1ReoPQ2K2_0AsrLlOcR-JVgtqLhN4h3Goch7Of9M/exec"
+                            <form method="post" 
                              class="form-subscribe" >
                                 <!-- Email address input-->
                                 <div class="row">
@@ -64,27 +104,12 @@
                                     
                                     
                                 </div>
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
                                
-                               
-                               <!--
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        <p>To activate this form, sign up at</p>
-                                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                    </div>
-                                </div>
-                                -->
-
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
                                 <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+
+                                <div class="d-none" id="successMessage">
+                                    <div class="text-center text-success mb-3">Subscribed successfully!</div>
+                                </div>
 
                             </form>
 
