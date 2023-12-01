@@ -1,0 +1,52 @@
+ConfSec is a SaaS Platform for Security, Compliance and
+Governance for Onlinecommunications to detect or report the issues.
+
+
+ConfSec detects risks in audio, visual, document, spoken, shown, and shared content in audioand video content when it integrates or used the recordedsessions from the conference applications like Team meetings like Zoom, Cisco WebEx, Microsoft Team meetings.
+
+
+ 
+
+
+ 
+
+
+Video Calls Monitoring:
+
+
+The pandemic has changed the way we do business, with a heavy reliance on video conferencing. However, monitoring and archiving video content has been slow to catch up,posing risks. ConfSec offers solutions to comprehensively capture and supervise video content.
+
+
+ 
+
+
+ 
+
+
+Chat Collaboration
+
+
+Modern chat collaboration tools are essential for employee engagement, but they also bring risks like misconduct and data leakage. ConfSec offers solutions to address these challenges.
+
+
+ 
+
+
+ 
+
+
+Call monitoring
+
+
+Call monitoring and compliance are crucial, given regulations like Dodd-Frank, PCI-DSS, MiFID II, and GDPR. But reviewing audio recordings can be challenging with legacy tools.
+
+
+ 
+
+
+ 
+
+
+Collaboration
+
+Safe collaboration is crucial for businesses today, but it comes with risks. Employees may share sensitive data or engage in misconduct, while external parties can disrupt meetings. Confsec helps proactively manage these risks.
