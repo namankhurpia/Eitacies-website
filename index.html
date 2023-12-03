@@ -30,7 +30,7 @@
                         headers: {
                             'Content-Type': 'application/json',
                         },
-                        body: JSON.stringify({ string: emailAddress }),
+                        body: JSON.stringify({ email: emailAddress }),
                     })
                     .then(response => {
                         if (!response.ok) {
